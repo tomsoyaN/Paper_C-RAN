@@ -140,6 +140,9 @@ C-RANの対抗馬(HetSNets,Massive MIMO)
   - Section 11:まとめ
 ---
 
+
+
+
 ---
 layout: quote
 position: center
@@ -179,6 +182,215 @@ A. Traditional Architecture
   <img border="rounded" src="/assets/fig4.png">
 </div>
 ---
+
+# II. WHAT IS C-RAN?
+B. Base Station With RRH
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>RRH(Remote Radio Head)を用いたアーキテクチャ</li>
+    <li>基地局を無線ユニットと信号処理ユニットに分離する</li>
+    <li>無線ユニットはRRHまたはRRU(Remote Radio Unit)と呼ばれる</li>
+    <li>RRHはファイバーへのインターフェースを提供し,無線処理を行う</li>
+    <li>信号処理ユニットはBBUまたはDU(Data Unit)と呼ばれる</li>
+    <li>3Gにて導入され,現在では大半がこのアーキテクチャをとる</li>
+　 </ul>
+  <img border="rounded" src="/assets/fig5.png">
+</div>
+---
+
+# II. WHAT IS C-RAN?
+B. Base Station With RRH
+- RRH-BBU間の距離は最長40km
+- 光ファイバーやマイクロ波による接続が可能
+- BBUを便利でアクセスしやすい場所に設置することができ,コスト削減につながる
+- RRHはBBUに静的に割り当てられ,1つのBBUで多数のRRHにも対応できる
+- RRHとBBUを繋ぐIrインターフェースが定義されている.
+- CPRI(Common Public Radio Interface)というIr上のRRH-BBU間IQデータ伝送に使用されるプロトコルがある.
+- OBSAI(Open Base Station Architecture Initiative),ORI(Open Radio Equipment Interface)等のプロトコルも使用可能
+---
+
+
+# II. WHAT IS C-RAN?
+C. Centralized Base Station Architecture—C-RAN
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>C-RANではBBUをBBU/DU PoolまたはHotelと呼ばれる1つのエンティティに集中させる.</li>
+    <li>高負荷の基地局と低負荷の基地局の間でBBUの利用を最適化</li>
+    <li>BBUプールはセルサイト間で共有され仮想化された,BBUのクラスタ.</li>
+    <li>X2インターフェースはX2+と新た強い形でクラスター間の通信を整理</li>
+    <li>Cは様々な意味にとらえられる</li>
+    <li>e.g)Cen-tralized Processing,Cooperative Radio,Collaborative,Clean</li>
+　 </ul>
+  <img border="rounded" src="/assets/fig6.png">
+</div>
+---
+
+# II. WHAT IS C-RAN?
+C. Centralized Base Station Architecture—C-RAN
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>フロントホールはRRHからBBUまでの範囲をカバー</li>
+    <li>バックホールはBBUプールとモバイルコアネットワークを接続</li>
+    <li>リモートサイトではRRHはアンテナと一緒に配置さている.</li>
+    <li>RRHは低遅延,高帯域の光トランスポートリンクを通じBBUプール内のプロセッサに接続している</li>
+    <li>IQサンプルはRRH-BBU間で送信される</li>
+　 </ul>
+  <img border="rounded" src="/assets/fig7.png">
+</div>
+---
+
+
+# II. WHAT IS C-RAN?
+各アーキテクチャの比較
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+　 </ul>
+  <img border="rounded" src="/assets/fig8.png">
+</div>
+---
+
+
+# III. ADVANTAGES OF C-RAN
+A. Adaptability to Nonuniform Traffic and Scalability
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>1日の内にユーザーは異なるエリアを行き来する</li>
+    <li>右図はネットワーク負荷の1日の変化を表す</li>
+    <li>ユーザーがオフィスから住宅地に移動すると移動先のエリアで膨大な処理能力が浪費される</li>
+    <li>C-RANでは複数セルのベースバンド処理をBBUプールで行うため全体の利用率を向上できる</li>
+　 </ul>
+  <img border="rounded" src="/assets/fig9.png">
+</div>
+---
+
+
+
+# III. ADVANTAGES OF C-RAN
+概要
+- C-RANはマクロセルとスモールセルの両方にメリッどがある
+- 以下のようなメリットが
+  - 基地局導入と運用コストの削減
+  - 消費電力を削減
+  - ネットワークアップグレードの柔軟性を高める
+  - 不均一なトラフィックへの適応性の実現
+  - CoMP,干渉緩和等のLTE-A機能を効率的にサポートできる
+- BBUプールにデータをキャッシュしておくことで,応答時間が短くなる.
+  - スモールセルの展開には欠かせない
+- 本章では3つの利点を述べ動機付けを行っていく.
+---
+
+
+# III. ADVANTAGES OF C-RAN
+A. Adaptability to Nonuniform Traffic and Scalability
+- BBUプールに必要なBBU数は単一基地局の合計よりも小さくなることが予想される.
+- 東京都市圏では従来に比べ75%,BBUの数を削減できることが示されている.
+- 特定のトラフィックパターンの場合,必要なBBUが従来よりも4倍少なく済む
+- 統計絵的多重化利得はトラフィックミックスに応じて1.2~1.6の間で変化し,17~38%の節約が可能になる
+- 基地局間の処理負荷のばらつきを利用し集中型アーキテクチャを構築することで、計算資源を少なくとも22%節約できる可能性
+- データトラヒックが計算し原利用率の変動に影響を与えることは証明されている.
+  - 複数のセクターを1つのクラウド基地局に集約すれば大幅な多重化が可能になる.
+  - e.g)57セクターを1つのBBUプールに集約すると計算資源が25%節約できる
+---
+
+# III. ADVANTAGES OF C-RAN
+A. Adaptability to Nonuniform Traffic and Scalability
+- 統計的利得の最大化
+  - トラフィックプロファイルに合わせてRRH-BBUプール間で柔軟に再構成可能なマッピングを用いる.
+  - 特定のトラフィックプロファイルを持つRRHを異なるBBUプールに接続する.
+- アップグレードには新しくRRHを設置しBBUプールにつなげるだけで良い
+- BBUプール自体はハードウェアを交換,新設することでアップグレード可能
+- BBUプールとセルの両方でロードバランシングが可能
+  - BBU側:BBUプール内の適切なBBUリソース割り当て問題
+  - セル側:動的にBBUが割り当てられるので,制約なしにユーザーのセルを切り替える
+---
+
+
+# III. ADVANTAGES OF C-RAN
+B.Energy and Cost Savings Coming From Statistical Multiplexing Gain in BBU Pool
+- エネルギーを節約した結果としてコストが削減できる
+- C-RANは従来のRANと比べ67%~80%の電力削減を可能にすると見積もられている
+- 合計でCAPEXは15%,OPEXを50%削減できると考えられている
+- しかし,BBUプール-RRHサイト間のファイバー費用がCAPEXを増加させる可能性もある
+- RRH-BBU間で伝送されるIQヘッドは大きなオーバーヘッドをもたらす
+  - 伝送ネットワークの設置と運用には大きなコストがかかる.
+---
+
+
+# III. ADVANTAGES OF C-RAN
+C. Increase of Throughput, Decrease of Delays
+- LTE及びLTE-AはC-RANで展開される可能性が最も高い
+- ここではeICIC,CoMPで提案されているLET-Aメカニズムについて紹介
+- eICIC,CoMPをよく理解することで,C-RANの利用機会について分かる
+---
+
+# III. ADVANTAGES OF C-RAN
+C. Increase of Throughput, Decrease of Delays
+- OFDMA(直行周波数分割多重アクセス)を利用
+  - 共有リソースのみで動作.
+  - LTEの基地局(evoleved Node B:eNB)にはリソース割り当てを行うスケジューラーがある.
+- 周波数再利用率が1であり,全てのセルが同一周波数で動作
+  - セル間干渉が非常に大きい
+- 干渉を抑えるための2つのアプローチ
+  - 1.干渉を最小限に抑える
+  - 2.干渉経路を建設的に利用する
+---
+
+
+# III. ADVANTAGES OF C-RAN
+1) Minimizing Inter Cell Interference
+- セル間干渉は静的,動的に解決可能
+- 静的方法
+  - そもそも同一周波数を使わない
+  - 隣接セルで異なる周波数を利用
+  - ハードな周波数再利用と呼ばれる
+- フラクショナルな周波数再利用も可能
+- しかしlower bandsの周波数資源は乏しいため,周波数再利用法以外の方法が良い
+  - 本セクションでは全てのセルで同一周波数を使用されている場合に焦点を当てる
+---
+
+
+# III. ADVANTAGES OF C-RAN
+1) Minimizing Inter Cell Interference
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>ICIC（Inter-cell Interference Coordination：セル間干渉調整）</li>
+    <li>1.UEが特定のサブキャリアで強い干渉を受信</li>
+    <li>2.eNBに報告</li>
+    <li>3.各eNBがサブキャリアが特定のUEに使用されないよう,近隣セルと連携し調整</li>
+    <li>これらはセル端のUEにのみ適用され,セル中央付近では全てのリソースを利用可能</li>
+　 </ul>
+  <img border="rounded" src="/assets/fig10.png">
+</div>
+---
+
+# III. ADVANTAGES OF C-RAN
+1) Minimizing Inter Cell Interference
+- 比較的シンプルなソリューション
+- eNBは負荷情報とスケジューリング情報を交換するだけで済む
+- 欠点も存在
+  - 隣接セルの干渉を考慮しなければいけない場合,最適なスケジューリングが決定できない
+  - 制御チャネルは固定リソースで送信されるため,干渉が発生する.
+---
+
+
+# III. ADVANTAGES OF C-RAN
+1) Minimizing Inter Cell Interference
+- eICIC(enhanced ICIC)
+- 特定のサブフレームがミュートされることを意味するABS(Almost Blank Sub-Frames)を導入
+  - CRSなどの一部の信号は送信されているため,Almost
+- 信号をミュートし,その間に重要な情報を送信できるようになる.
+---
+
+
+# III. ADVANTAGES OF C-RAN
+1) Minimizing Inter Cell Interference
+- eICIC(enhanced ICIC)
+- 特定のサブフレームがミュートされることを意味するABS(Almost Blank Sub-Frames)を導入
+  - CRSなどの一部の信号は送信されているため,Almost
+- 信号をミュートし,その間に重要な情報を送信できるようになる.
+---
+
+
 
 # What is Slidev?
 
