@@ -383,12 +383,118 @@ C. Increase of Throughput, Decrease of Delays
 
 
 # III. ADVANTAGES OF C-RAN
-1) Minimizing Inter Cell Interference
-- eICIC(enhanced ICIC)
-- 特定のサブフレームがミュートされることを意味するABS(Almost Blank Sub-Frames)を導入
-  - CRSなどの一部の信号は送信されているため,Almost
-- 信号をミュートし,その間に重要な情報を送信できるようになる.
+2) Utilizing Interference Paths Constructively
+- CoMP(Coordinated Multi-Point)
+  - 干渉を有用な信号に変えるという考え方
+- グループ化された複数セル(CoMPセット)が協力してユーザーにサービスを提供
+- DLではCoMPセット内の基地局間で緊密な同期と調整が必要
 ---
+
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- 単純なCoMP
+  - ICICの例として見れる
+- 1UEは1eNBのみからの信号を受信
+- CoMPセット内の残りのeNBは干渉を避けるために支援を行う
+  - 支援方法:
+  - 特定のサブキャリアを使用しない(CS-Coordinated Scheduling)
+  - ビームフォーミングなどの特殊なアンテナを使用する(CB-Coordinated Beamforming)
+- CS/CBでは1つの基地局が1つのユーザーに対して同時に送信を行うため基地局の同期が必要(周波数0.05ppm、タイミング3μsの精度)
+---
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- CS/CBの発展系としてDCS(Dynamic Cell Selection)がある.
+- CoMPセット内の全てのセルでUEに送信されるデータが利用可能
+- 送信する1つのeNBを選ぶ
+  - 移動体への送信経路が最も有利なeNBから送信ができる
+- CS/CBと同レベルの基地局同期が必要
+---
+
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- 共同送信(JT:Joint Transmission)は最も進んだCoMPシナリオ
+- CoMPセット内の全てのセルでUEに送信されるデータが利用可能
+- 複数のセルが共同で1人のユーザーに送信
+  - 複数の基地局からタイムリーで正確なチャネル特性のフィードバックが必要
+  - CSI(Channel State Infomation)を用いる
+---
+
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- シングルユーザーJT
+- 複数のセルが単純に1UEに同データを送信
+  - 受信側で合成し,SINRゲインを得ることができる.
+- 複数のセルを使用するため再利用率が1/3になってしまう.
+  - 負荷の軽いシステムに最も適している
+- DCSと組み合わせることで,動的に　CoMPセットを変化されることができる.
+- 負荷の高いシステムにはJTをマルチユーザーJTに拡張する
+---
+
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- マルチユーザーJT
+- ユーザーグループが(時間-周波数)リソースを共有することができる.
+- 緊密な基地局の同期を必要とする.
+- C-RANベースのアーキテクチャでの使用に適する
+---
+
+
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- C-RANと一緒に使うことの利点
+- CoMPでは干渉をさらに低く抑えられ,クラスタリングと組み合わせることで無線帯域を効率的にも利用できる
+  - スペクトル効率の向上(UL)
+  - セル内JT:13%　　セル外JT:20%
+  - セル内JT:75%　　セル外JT:119%(セルエッジユーザー)
+- ICICでは複数セルの送信を管理するセントラルユニットをBBUプール常に構築できる.
+---
+
+# III. ADVANTAGES OF C-RAN
+2) Utilizing Interference Paths Constructively
+- C-RANによりX2インタフェース使用量を削減できる.
+  - CoMPは10~15%の共同処理利得を獲得
+  - ICICは10~30%のメルチセル無線リソース管理(Radio Resource Management:RRM)を獲得
+- キャリア周波数オフセットが±3〜5ppbを超えない場合,容量とカバレッジの両方で顕著な性能向上を達成する.
+  - e.g)Cell-Average:20%　　Cell-Edge:52%
+- Multi-Cell MIMOのようなプール強調技術を強化できる
+  - C-RANによるアンテナ選択戦略は従来の戦略よりも優れた結果を示している.
+---
+
+
+
+# III. ADVANTAGES OF C-RAN
+3) Decrease of the Delays
+- ハンドオーバーeNB間でなくBBUプール内で行えるため,その分の時間を短縮できる
+- GSM（Global System for Mobile Commu-nications）
+  - ハンドオーバーの平均割り込み時間の合計が短くなり、シグナリングが減少
+- UMTS（Universal Mobile Telecommunications System）
+  - lubトランスポートベアラのセットアップとトランスポート帯域幅の要件が低減される
+  - しかし性能の向上はユーザーには感じられないかもしれない.
+- LTE X2 ベースのeNB間ハンドオーバー
+  - 遅延と失敗率の減少
+  - コアモバイルネットワークに送信されるシグナリング情報が減少
+---
+
+
+# III. ADVANTAGES OF C-RAN
+D. Ease in Network Upgrades and Maintenance
+- BBUが集中化されているのでアップグレード,管理が楽
+- BBUが遠隔地にある場合に比べ,より頻繁にCPUを更新できる.
+- SDR（Software Defined Radio）
+  - 信号生成、符号化、リンク層プロトコルなどの無線機能をソフトウェアで実装することができる技術
+  - 遠隔操作でプログラミング、アップグレード、最適化が可能なソフトウェア基地局を実現
+  - 新しい規格,周波数へのアップグレードはソフトウェアを更新するだけで良い.
+- 上記によりマルチモード基地局は、ネットワーク開発やOAM（Operation, Administration and Maintenance）のコストを軽減
+
+---
+
+
 
 
 
