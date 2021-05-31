@@ -496,6 +496,320 @@ D. Ease in Network Upgrades and Maintenance
 
 
 
+# IV. CHALLENGES OF C-RAN
+- C-RANを商業展開する前に解決しなければならない問題がある.
+- 本章では以下の課題を紹介
+  - A. 高い帯域幅,厳しい遅延ーとジッター,及び低コストのトランスポートネットワーク
+  - B.BBUの協調,相互接続,クラスタリング技術の開発
+  - C.BBUプールの仮想化技術の提案
+---
+
+
+
+# IV. CHALLENGES OF C-RAN
+A. High band- width, strict latency and jitter as well as low cost transport net- work needs to be available
+- C-RANではRRH-BBUプール間の光リンクに膨大なオーバーヘッドが発生する.
+- IQデータのサイズに影響を与える要因
+  - ターボコード(1:3のものが採用されているためオーバーヘッド3倍)
+  - CPRIなどインターフェースのIQサンプル幅
+  - LTE信号のオーバーサンプリング(LTEでは30.72MHzのサンプリング周波数が標準だが,これはナイキスト周波数20MHzより高い)
+
+---
+
+# IV. CHALLENGES OF C-RAN
+A. High band- width, strict latency and jitter as well as low cost transport net- work needs to be available
+- C-RANではRRH-BBUプール間の光リンクに膨大なオーバーヘッドが発生する.
+- IQデータのサイズに影響を与える要因
+  - ターボコード(1:3のものが採用されているためオーバーヘッド3倍)
+  - CPRIなどインターフェースのIQサンプル幅
+  - LTE信号のオーバーサンプリング(LTEでは30.72MHzのサンプリング周波数が標準だが,これはナイキスト周波数20MHzより高い)
+---
+
+
+# IV. CHALLENGES OF C-RAN
+A. High band- width, strict latency and jitter as well as low cost transport net- work needs to be available
+
+$$
+IQBandwidth = samplingFrequency * sampleWidth * 2 * lineCoding * MIMO * noOfSectors
+$$ 
+- 上式はIQ帯域幅に影響を与える要因をまとめた式
+- 以下の表はセルサイトとBBU間の期待されるIQビットレートをまとめたもの
+![](/assets/fig12.png)
+---
+
+
+# IV. CHALLENGES OF C-RAN
+A. High band- width, strict latency and jitter as well as low cost transport net- work needs to be available
+
+- 遅延とジッター要件に様々な制約がかかる.
+  - JTを利用にするには基地局間の照合に0.5μsのタイミング精度が要求されている.
+  - ユーザーデータの往復遅延は,各リンクまたはホップで±16.276nsの精度で測定した場合,5μsを超えてはいけない
+  - HARQ要求を満たすために,RRHとBBU間のリンクにおけるサブフレーム処理遅延は,1ms以下に抑える
+  - RRHとBBU間の最大距離は20-40kmを超えてはいけない
+---
+
+
+# IV. CHALLENGES OF C-RAN
+B. BBU Cooperation, Interconnection and Clustering
+
+- CoMPを利用するには基地局間の協力が不可欠
+- BBUを接続する方法は広帯域で低遅延の信頼性が高く,低コストで,RRHを相互に接続する柔軟なトポロジーを備えている必要
+  - SDH（Synchronous Digital Hierarchy）などの従来の光ネットワークと同等以上の信頼性が必要
+  - ファイバーリングネットワークプロテクションなどの仕組みを利用できる
+---
+
+
+# IV. CHALLENGES OF C-RAN
+B. BBU Cooperation, Interconnection and Clustering
+
+- CoMPを容易にする,過負荷を防ぐためにセルは1つのBBUプールに割り当てられるべき
+  - セルを最適にクラスタリングする.
+  - 干渉を分析した後に最適なセルーBBUプールの割り当てが行われる.
+- C-RANのエネルギーを節約するためには稼働するBBU/RRHが最適になるよう基地局を選択する必要
+- 大きなセル間干渉(ICI)に対し,スペクトル効率を上げる協調的な送受信戦略が必要
+ - C-RANのスケジューラがうまく機能してるかもどうかもスペクトル効率に影響を与える.
+- トラフィックの需要に応じてBBUとRRHの接続を動的に変更できるColony RAN
+  - C-RANのための準静的および適応的なBBU-RRH切り替え戦略が考案され,評価されている.
+  - 静的な戦略と比べ,準静的では26%,適応的では47%BBUが節約できるとされる.
+---
+
+
+# IV. CHALLENGES OF C-RAN
+C. Virtualization Technique
+
+- 仮想基地局間で処理を分散,グループ化し複数のオペレーターで資源を共有するための仮想化技術が提案される必要性
+- どのような仮想化技術でありリアルタイムに動作することを期待
+- 動的に変化するセル負荷に対応する処理能力の割り当て技術が必要
+- 表はクラウドコンピューティングとC-RANのクラウドインフラに対する要件の比較
+
+![](/assets/fig13.png)
+---
+
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+
+- 本章ではC-RANを実現するための技術的な解決策を紹介
+  - A.C-RANの内部アーキテクチャと物理媒体を評価
+  - B,C-RANをサポートする可能性のあるトランスポート層のソリューションを評価
+  - D.現在利用可能なIQ圧縮/伸長法
+- 本論文ではC-RANの特徴のフロントホールネットワークのトランスポートネットワークに焦点
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (1)
+- トランスポートネットワークのオーバーヘッドを削減するために,基地局機能をRRHとBBUに分割する方法は2つある
+  - 完全集中型(a)
+  - 部分集中型(b)
+ <div grid="~ cols-2 gap-2" m="-t-2">
+  <img border="rounded" src="/assets/fig14.png">
+  <img border="rounded" src="/assets/fig15.png">
+</div>
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (1)
+ <div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>完全集中型</li>
+    <li>L1,L2,L3の機能はBBUプールに全て存在</li>
+    <li>RRHとBBUの間で高帯域のIQデータ伝送が内的に発生</li>
+  </ul>
+  <img border="rounded" src="/assets/fig14.png">
+</div>
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (1)
+ <div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>部分集中型</li>
+    <li>L1処理はRRHと同居</li>
+    <li>光トランスポートリングの帯域幅負担を軽減</li>
+    <li>しかし,リソースの共有が大幅に減少</li>
+    <li>CoMP等の機能を効率的にサポートできない</li>
+  </ul>
+  <img border="rounded" src="/assets/fig15.png">
+</div>
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (1)
+- 集中型と部分型の中間のもの
+- L1処理の特定機能のみをRRHと共同で配置する
+- e.g)セル/セクター固有機能であるL1前処理をRRHと共同配置し,他大部分はBBUに残す
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (2)
+- 集中型と部分型の中間のもの
+- L1処理の特定機能のみをRRHと共同で配置する
+- e.g)セル/セクター固有機能であるL1前処理をRRHと共同配置し,他大部分はBBUに残す
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+A. Physical Layer Architecture and Physical Medium (2)
+- ファイバー接続 vs 無線接続
+- 2014年には世界規模で基地局の35％だけがファイバーで接続,55％が無線技術で接続,残り10％が銅で接続されると予想
+- ファイバー接続の世界シェアは拡大、北米はバックホール接続に占めるファイバーの割合が62.5%にもなる.
+- 将来的には100Gbpsのファイバーが利用できる
+- Eバンドマイクロ波伝送により99.999%のリンク可溶性を保証するために1~2km,99.9%であれば5~7kmの距離でGbpsの容量を提供できる
+- スモールセルの展開ではWi-Fiが無線バックホーリングの方法として考えられている.
+- 同様の方法でWi-fiをフロントホーリングに仕様でいる可能性がある.
+- 結論としてC-RANの導入はRRH-BBUプール間にファイバーリングがある場合のみ可能.
+  - 部分集中化アーキテクチャではRRH-BBUプール間の伝送媒体にマイクロ波を使用できる.
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+B. Transport Network
+- 物理媒体としてファイバーが最も有力
+- ここでは以下のトランスポートネットワークソリューションについて説明.
+  - ダークファイバー
+  - WDM/OTN: 波長分割多重（WDM）/光伝送ネットワーク（OTN）
+  - Unified Fixed and Mobile Access
+  - Carrier Ethernet
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+B. Transport Network (Dark Fiber)
+- 10台以下のマクロ基地局を有するBBUプールでは,容量要件の観点からダークファイバーが好ましい
+- ダークファイバは光伝送ネットワーク機器を追加する必要がない
+  - 迅速かつ低コストに導入可能
+- しかしファイーバー資源を大量に消費
+  - ネットワークの拡張性が課題
+- 障害発生時には新たな保護機構が必要
+- が,これらの課題は解決できる
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+B. Transport Network (WDM/OTN)
+- ファイバー資源が限られているマクロ基地局に適する.
+- 1本の光ファイバで40～80の光波長を伝送することができる
+- WDM/OTNへのアップグレードには高いコストがかかる. 
+  - 長距離のバックボーンネットワークに比べれば安価に導入できる
+- C-RANのための非階層的なWDMベースのアクセスのコンセプトも考案
+  - 既に導入されているファイバーを再利用し,共通のファイバーであらゆるトラフィックを伝送できる.
+  - 仮想P2P WDMリンクを確立することで1本で最大48の双方向CPRIリンクをサポート可能
+
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+B. Transport Network (Unified Fixed and Mobile Access)
+- 固定ブロードバンドとモバイルアクセスネットワークを組み合わせたもの,UniPONがその1つ
+- UniPONはPONサービスとCPRI伝送の両方を提供
+- 1本の光ケーブルで14種類の波長を提供
+  - コスト削減
+
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+B. Transport Network (Carrier Ethernet)
+- LANの技術であったイーサネットはキャリアのサービスも耐えれる品質を持つようになった
+  - キャリアイーサネット
+- キャリアイーサネットをRRHからBBUプールに向けて直接適用することもできる.
+  - CPRI2Ethernetゲートウェイが必要
+  - イーサネットで伝送される異なるCPRIストリームを異なる目的地に転送するための多重化機能を備えている
+- 99.999%のサービス可用性を保証
+- 最大1,600万人の顧客をサポートすることができる.
+- イーサーネットを利用する課題は,同期と合成に厳しい制約があること
+  - 周波数精度は±50ppb以内,位相精度は半径3km以下のセルで±1.5μsが必要
+
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+C. Network Equipment
+
+以下はCーRAN用に開発された機器である.
+- CPRI2Ethernet Gateway
+  - CPRIデータをイーサネットパケットにマッピングするためのもの
+  - トランスポートネットワーク規格としてイーサネットが選択された場合に必要
+  - イーサネットで伝送される異なるCPRIストリームを異なる目的地に転送するための多重化機能を備えている
+- IQ Data Routing Switch
+  - DCN(Dynamic Circuit Network)のFat-Treeアーキテクチャがベース
+  - BBU間の負荷分散を容易に実現
+  - リアルタイム処理とリンクロードバランシング,リソース管理プラットフォームも導入されている.
+
+---
+
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+C. Network Equipment
+
+- CPRI Mux
+  - トラフィックを集約し,最小数の光インターフェースで伝送するためにカプセル化する装置
+  - IQ 圧縮/伸張が可能で,Coarse WDMやDense WDM用の光インターフェースを備えている.
+  - BBU PoolはCPRI muxで多重化された信号を分離する
+- x2OTN Gateway
+  - CPRI/OBSAIからOTNへのゲートウェイ
+  - トランスポートネットワークにOTNを選択した場合に使用
+
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+D. IQ Compression Schemes and Solutions
+
+- C-RANではフロントホールのデータレートは無線部の12倍から55倍になると予想されている.
+- 容量に制約のあるフロントホール上で広帯域の伝送を最適化するためには,効率的な圧縮戦略が必要
+- 潜在的な解決策としては以下がある
+  - サンプリングレートを下げる,非線形量子化を使う
+  - 周波数サブキャリア圧縮,IQデータ圧縮
+- 様々な要因を考慮して戦略を練る
+<div grid="~ cols-2 gap-2" m="-t-2">
+  <p></p>
+  <img border="rounded" src="/assets/fig16.png">
+</div>
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+D. IQ Compression Schemes and Solutions
+
+- Reducing signal sampling
+  - プロトコルへの影響が少なく容易
+  - 多少の性能低下はあるが最大66%圧縮率を向上させる
+-  Non-linear quantization
+  - より多くの値が存在する可能性のある大きさの領域に対し,高い量子化レベルを設定
+  - 量子化SNR（Quanti-zation SNR）が向上
+  - ステップサイズの指定にはμ-LawやA-Law等の対数符号化アルゴリズムが使用可能
+  - 最大53%の圧縮効率が得られるが,Irインターフェースがさらに複雑になる.
+---
+
+
+# V. TRANSPORT NETWORK TECHNIQUES
+D. IQ Compression Schemes and Solutions(IQ data compression)
+
+- IQ data compression
+  - DAGC（Digi-tal Automatic Gain Control)等を用いて行うことができる.
+  - DLにおいてSNR（信号対雑音比）やEVM（エラー・ベクトル・マグニチュード）が悪化する
+  - 潜在的には高い圧縮率が得られるが,複雑であり良いアルゴリズムがない
+-  Subcarrier compression
+  - FFT/IFFTブロックをRRHに実装することでIrインターフェースの負荷を40%低減することができる.
+  - DLでは簡単に実行できるが,RACHの処理は大きな課題
+  - IQマッピングやシステムの複雑性を高める.
+  - 高価な機器,より多くのストレージ,より大きなFPGA処理能力が必要
+---
+
+# V. TRANSPORT NETWORK TECHNIQUES
+D. IQ Compression Schemes and Solutions(IQ data compression)
+ <div grid="~ cols-2 gap-2" m="-t-2">
+  <ul>
+    <li>表は本論文で紹介した圧縮方式をまとめたもの</li>
+    <li>BBUプールの費用対効果を失わないためには,相当量のファイバーを所有するかIQ圧縮を行う必要がある.</li>
+    <li>さらに光高速モジュールのコストを従来のSDHトランスポート機器と同等に保ちたい.</li>
+  </ul>
+  <img border="rounded" src="/assets/fig17.png">
+</div>
+---
+
 
 
 # What is Slidev?
