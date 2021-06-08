@@ -1165,6 +1165,8 @@ section: VII. SYNCHRONIZED BBU IMPLEMENTATION
 - BBU間の相互接続には低遅延,高速,高信頼性,10Gbpsのリアルタイム伝送が求められる.
 - さらにCoMP,動的キャリアスケジューリング,1+1障害保護をサポートし,高いスケーラビリティを提供する必要
 ---
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
+---
 
 # VII. SYNCHRONIZED BBU IMPLEMENTATION
 <br>
@@ -1174,7 +1176,8 @@ section: VII. SYNCHRONIZED BBU IMPLEMENTATION
   - 高性能で低消費電力の信号処理,リアルタイム信号処理
   - BBUの相互接続,BBU内のチップ間,物理ラック内のBBU,ラック間の接続
 ---
-
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
+---
 
 # A. Current Solutions:Multimode Base Station
 <br>
@@ -1186,7 +1189,8 @@ section: VII. SYNCHRONIZED BBU IMPLEMENTATION
   - 互換性のない複数のプラットフォームを管理する必要がない
   - アップグレードの柔軟性を高め,革新的なアプリケーションやサービスの創出を促進
 ---
-
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
+---
 
 # B. Processors
 <br>
@@ -1199,6 +1203,8 @@ section: VII. SYNCHRONIZED BBU IMPLEMENTATION
 - C-RANアーキテクチャが従来のRANと比較して消費電力を削減するために,信号処理装置の消費電力の検討が不可欠
   - 同じ処理能力であればDSPはGPPに比べ低価格
 ---
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
+---
 
 # B. Processors
 <br>
@@ -1209,6 +1215,8 @@ GPPについて
   - BBUのアップグレードもスムーズに行える
 - リアルタイム性を備えた複数のOSにより,基地局の信号処理を仮想化することができる
 ---
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
+---
 
 # B. Processors
 <br>
@@ -1217,6 +1225,8 @@ GPPについて
   - 4コアのマルチコア実装であれば遅延は範囲内におさまるはずである
   - ターボデコーダーを最適化する方法もある.
   - 複数のスレッドとスマートな実装を用いることで,3GPP要件を満たすことができることが証明されている
+---
+section: VII. SYNCHRONIZED BBU IMPLEMENTATION
 ---
 
 # B. Processors
@@ -1241,6 +1251,8 @@ section: VIII. VIRTUALIZATION
 - 無線仮想化アーキテクチャ、ハードウェアプラットフォーム、リンクリソースに関する技術も紹介
 - さらにソフトウェア定義ネットワーク(SDN)とネットワーク機能仮想化(NFV)に関する進行中の研究を紹介
 ---
+section: VIII. VIRTUALIZATION
+---
 
 
 # A. Virtualization Concept
@@ -1252,6 +1264,8 @@ section: VIII. VIRTUALIZATION
 - BBUプールではネットワークの仮想化はデータストレージだけでなく,アプリケーション,OS,管理制御も分離する.
 - BBUはハードウェアプラットフォーム上で動作し,LinuxなどのOSを介して実装される.
 - 基地局の機能は仮想基地局(VBS)と呼ばれるソフトウェアインスタンスとして実現される
+---
+section: VIII. VIRTUALIZATION
 ---
 
 
@@ -1268,6 +1282,8 @@ section: VIII. VIRTUALIZATION
   <img border="rounded" style="max-width:100%" src="/assets/fig19.png">
 </div>
 ---
+section: VIII. VIRTUALIZATION
+---
 
 
 # A. Virtualization Concept
@@ -1278,6 +1294,8 @@ section: VIII. VIRTUALIZATION
   - 仮想オペレータの追加や削除などのスケーラビリティ
     - 一般的な傾向としてIaaSの開発が進んでいる
     - RANをクラウドサービスのように提供するRANaaSなど
+---
+section: VIII. VIRTUALIZATION
 ---
 
 
@@ -1291,6 +1309,8 @@ section: VIII. VIRTUALIZATION
   - 媒体の性質上,物理的なリンクが変化しやすく,接続するユーザーも頻繁に変化する
   - 仮想無煙通信事業者間で無線インターフェースを共有する場合,切り替え,認証やセキュリティの違い,帯域資源の使用方法の違いなどの課題がある
 ---
+section: VIII. VIRTUALIZATION
+---
 
 
 # B. Virtualization Solutions
@@ -1299,6 +1319,8 @@ Proposals on Wireless Network Virtualization Architecture
 - GENI（Global Environment for Network Innovations）では無線ネットワーク仮想化のネットワークプラットフォームを提案・開発している
 - Wi-Fiネットワークで使用されているソリューションは,スモールセルにも適用可能であるため,モバイル・ネットワークのヒントにもなりうる.
 - LTEではZakiらおよびZhaoらが,LTEの無線仮想化に関する要件と設計上の課題をシミュレーションによって検討している
+---
+section: VIII. VIRTUALIZATION
 ---
 
 
@@ -1314,6 +1336,8 @@ Proposals on Implementation of Hardware Virtualization
 - Coskunら[101]は省電力メカニズムを使用した仮想802.11インタフェースの実現について発表
 - [102]ではネットワーク仮想化によってリンク層とネットワーク層でソフトハンドオーバーを行う方法を提案
 ---
+section: VIII. VIRTUALIZATION
+---
 
 
 # B. Virtualization Solutions
@@ -1328,7 +1352,8 @@ Proposals on Implementation of Resource Virtualization
   - データセンターにホストされた仮想アクセスポイントでMACフレームが生成・処理されるエンタープライズWLAN用のアーキテクチャ
 - Zhaoら[98]はLTEの仮想化モデルと,仮想事業者間の多重化利得の向上につながるスペクトル共有戦略について述べている
 ---
-
+section: VIII. VIRTUALIZATION
+---
 
 
 # C. Ongoing Work on SDN and NFV
@@ -1338,6 +1363,8 @@ Proposals on Implementation of Resource Virtualization
 - ソフトウェアにより作られる仮想ネットワーク
 - 構成を自由に変更することができる
 - コアネットワークでよく利用される
+---
+section: VIII. VIRTUALIZATION
 ---
 
 # C. Ongoing Work on SDN and NFV
@@ -1352,6 +1379,8 @@ Proposals on Implementation of Resource Virtualization
   <img border="rounded" style="max-width:80%" src="/assets/SoftRAN.pbm">
 </div>
 
+---
+section: VIII. VIRTUALIZATION
 ---
 
 
@@ -1368,6 +1397,9 @@ Proposals on Implementation of Resource Virtualization
 </div>
 
 ---
+section: VIII. VIRTUALIZATION
+---
+
 
 # C. Ongoing Work on SDN and NFV
 <br>
@@ -1378,6 +1410,9 @@ Proposals on Implementation of Resource Virtualization
   - トラフィックの負荷分散
   - ハードウェア障害時の自動回復
 ---
+section: VIII. VIRTUALIZATION
+---
+
 
 # C. Ongoing Work on SDN and NFV
 <br>
@@ -1392,6 +1427,9 @@ Proposals on Implementation of Resource Virtualization
   <img border="rounded" style="position:relative;bottom:40px;max-width:100%" src="/assets/NFV.png">
 </div>
 ---
+section: VIII. VIRTUALIZATION
+---
+
 
 
 # C. Ongoing Work on SDN and NFV
@@ -1405,7 +1443,8 @@ Proposals on Implementation of Resource Virtualization
   - 高性能な汎用プロセッサやリアルタイム処理の仮想化技術が厳しく求められる
   - CoMPなどのLTE-A機能を実装したBBUプールの導入も必要
 ---
-
+section: VIII. VIRTUALIZATION
+---
 
 # C. Ongoing Work on SDN and NFV
 <br>
@@ -1434,6 +1473,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
   - B.既存のネットワークの容量を増やすための追加セルの展開
   - C.C-RAN導入のさまざまな段階の紹介
 ---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
+---
 
 
 # A. Green Field Deployment
@@ -1445,6 +1486,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
 - セルが高密度に配置された都市部の小規模なデプロイメントに適する
   - 小さな地域ではTCOが少なくなる
 ---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
+---
 
 
 # B. C-RAN for Capacity Boosting
@@ -1455,6 +1498,9 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
 - C-RANの導入には,既存のBBUをBBUプールに移す
 - RRHはそのままの場所で良く,追加設置も可能
 ---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
+---
+
 
 # B. C-RAN for Capacity Boosting
 
@@ -1467,6 +1513,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
   - ビルの屋上などにRRHを配置し大容量確保も可能
   - ただし,屋内ではWiFiの方が安価ばソリューション
 ---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
+---
 
 
 # B. C-RAN for Capacity Boosting
@@ -1478,6 +1526,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
   <p></p>
   <img border="rounded" style="position:relative;bottom:-10px;max-width:80%" src="/assets/fig23.png">
 </div>
+---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
 ---
 
 
@@ -1492,6 +1542,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
   - このシナリオではユーザーは高速で移動する
   - BBUプールは従来のRANよりも頻繁に生じるハンドオーバーを迅速に処理する必要がある
 ---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
+---
 
 
 # B. C-RAN for Capacity Boosting
@@ -1499,6 +1551,8 @@ section: IX. LIKELY DEPLOYMENT SCENARIOS
 <div> 
   <img border="rounded" style="left:20%;position:relative;bottom:-10px;max-width:63%" src="/assets/fig24.png">
 </div>
+---
+section: IX. LIKELY DEPLOYMENT SCENARIOS
 ---
 
 
@@ -1524,294 +1578,126 @@ section: X. ONGOING WORK
 
 # この章は?
 
-- この章では以下のようなC-RANの展開シナリオについて紹介
-  - A.グリーンフィールド展開
-  - B.既存のネットワークの容量を増やすための追加セルの展開
-  - C.C-RAN導入のさまざまな段階の紹介
+- C-RAN の定義と開発に焦点を当てたプロジェクトを紹介
+- フィールドトライアル,開発されたプロトタイプの調査結果,最初の商業展開の発表についても紹介
+---
+section: X. ONGOING WORK
 ---
 
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
+# A. Joint Effort
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-</style>
-
+- 以下の企業は新しいC-RANを開発している
+  - China Mobile ,ZTE、IBM、Huawei、Intel、Orange、Chuanhua Tele-com、Alcatel-Lucent、Datang Mobile、Ericsson、Nokia Siemens Networks
+- NGMN連合はP-CRANというプロジェクトで新しいRANを開発している
+  - 果の1つに、C-RANのユースケースの説明とC-RANの構築と実装に関するソリューションの提案がある
+- FP7はモバイル・クラウド・ネットワーキング」(MCN)プロジェクトをし2011年から始動
+  - クラウド・コンピューティングがモバイル・ネットワークにもたらす可能性を評価,それを実現する
+---
+section: X. ONGOING WORK
 ---
 
-# Navigation
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-### Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly!
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes are able to provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
+# A. Joint Effort
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+- High capacity network Architecture with Remote Radio Heads & Parasitic antenna arrays" (HARP)プロジェクト 
+  - RHとESPAR(Electronically Steerable Passive Antenna Radiators)をベースにした新しいC-RANアーキテクチャの実証に焦点
+- Interworking and JOINt Design of an Open Access and Backhaul Network Architecture for Small Cells based on Cloud Networks（IJOIN）プロジェクト 
+  - RANaaSという新しいコンセプトを導入
+  - スモールセル,ヘテロジニアス・バックホールおよび集中処理を統合することが目的
+---
+section: X. ONGOING WORK
+---
 
-Block
-$$
-\begin{array}{c}
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
 
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
+# B. C-RAN Prototype
 <br>
 
-[Learn more](https://sli.dev/guide/syntax#latex)
+- ChinaMobileはGSM,TD-SCDMA,TD-LTEをサポートするGPPベースのC-RANプロトタイプを開発
+  - Intelプロセッサベースのサーバ上で動作
+  - GSM、TD-SCDMAのL1、L2、L3に加えて、L1のTD-LTEにも対応
+  - 将来的にはTD-LTEのL2、L3およびCoMPなどのLTE-Aの機能を実装する予定
+- エリクソン北京はWDM-PONとマイクロ波Eバンドリンクを使用してLTE RRHとBBUを接続するコンセプトを実証
+---
+section: X. ONGOING WORK
+---
+
+# C. China Mobile Field Trial
+<br>
+
+  - China Mobileは中国の複数の都市の商用ネットワークでC-RANのトライアルを行っている
+    - 1つのセルに複数のRRHを使用することで無線性能とユーザーエクスペリエンスが向上
+    - ハンドオーバーが1つのBBUプール内で処理されるためサイト間ハンドオーバーの遅延が減少
+    - CAPEXとOPEXがそれぞれ53％と30％削減
+    - 地局の利用率が向上し,消費電力が削減
+---
+section: X. ONGOING WORK
+---
+
+
+# D. First Commercial Deployment
+<br>
+
+  - 韓国テレコムは2011年末にC-RANの最初の商用展開の計画を発表
+    - LTE,3G,WiMAXおよびWi-Fiの各技術をカバー
+    - クラウド・コミュニケーション・センター（CCC）と呼ばれるアーキテクチャを開発
+    - GPPをベースにした1,000台のサーバーが1つのBBUプールで使用される予定
+    - サーバーごとに144の基地局を管理
+---
+layout: quote
+position: center
+---
+# XI. CONCLUSION
+
+---
+section: XI. CONCLUSION
+--- 
+
+
+ # XI. CONCLUSION
+<br>
+
+  - C-RANアーキテクチャの概要を説明
+  - その利点を説明
+  - 利点を十分に活用するために解決しなければならない課題について議論
+  - C-RANが強化できるLTE-Aの機能、すなわちCoMPとeICICについて幅広く紹介
+  - C-RANの課題を解決するための取り組みについても紹介
+    - フロントホールの容量増加の必要性,BBUプールの仮想化技術,ハードウェアの実装
+  - C-RANをベースにしたネットワークの最初のプロトタイプとフィールドトライアルについて紹介
+---
+section: XI. CONCLUSION
+--- 
+
+ # XI. CONCLUSION
+<br>
+
+  - C-RANのコンセプトは明確に定義されている
+  - しかしメリットを最大限に活かすための最適なアーキテクチャを見つけるにはさらなる研究が必要
+  - モバイルネットワーク事業者や通信業界はC-RANに高い関心を示している
+  - しかし,C-RANの導入はフロントホールネットワークの容量や圧縮戦略,BBUリソースの仮想化コストなどを考慮し,正当化される必要がある
+---
+section: XI. CONCLUSION
+--- 
+
+
+ # REFERENCES
+<br>
+  <RefWeb author="富士通株式会社" title="eICIC（enhanced Inter-Cell Interference Coordination）" url="https://www.fujitsu.com/jp/group/mtc/technology/course/eicic/" access="2020/6/3"/>
+  <RefWeb author="NTTドコモ" title="LTE/LTE-Advanced高速化におけるヘテロジーニアスネットワーク容量拡大技術" url="https://www.nttdocomo.co.jp/binary/pdf/corporate/technology/rd/technical_journal/bn/vol21_2/vol21_2_010jp.pdf" access="2020/6/3"/>
+  <RefWeb author="NTTドコモ" title="LTE/LTE-Advanced高速化におけるヘテロジーニアスネットワーク容量拡大技術" url="https://www.nttdocomo.co.jp/binary/pdf/corporate/technology/rd/technical_journal/bn/vol21_2/vol21_2_010jp.pdf" access="2020/6/3"/>
+  <p>Pratap, Ajay & Misra, Rajiv & Das, Sajal. (2018). Resource Allocation to Maximize Fairness and Minimize Interference for Maximum Spectrum Reuse in 5G Cellular Networks. 1-9. 10.1109/WoWMoM.2018.8449760. </p>
+  <p>Temesgene, Dagnachew Azene & Núñez-Martínez, José & Dini, Paolo. (2017). Softwarization and Optimization for Sustainable Future Mobile Networks: A Survey. IEEE Access. 5. 25421-25436. 10.1109/ACCESS.2017.2771938. </p>
 
 ---
 
-# Diagrams
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+ # REFERENCES
+<br>
+  <RefWeb author="ネットワークエンジニアとしての管理人" title="SDN ( Software Defined Network )
+" url="https://www.infraexpert.com/study/sdn01.html" access="2020/6/7"/>
+<RefWeb author="ネットワークエンジニアとしての管理人" title="NFV ( Network Functions Virtualization )
+" url="https://www.infraexpert.com/study/sdn07.html" access="2020/6/7"/>
+<p>Chen, Tao & Matinmikko, Marja & Chen, Xianfu & Zhou, Xuan & Ahokangas, Petri. (2015). Software defined mobile networks: Concept, survey, and research directions. IEEE Communications Magazine. 53. 10.1109/MCOM.2015.7321981. </p>
 
-<div class="grid grid-cols-2 gap-4 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
